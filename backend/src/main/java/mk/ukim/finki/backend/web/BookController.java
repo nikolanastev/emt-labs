@@ -1,5 +1,6 @@
 package mk.ukim.finki.backend.web;
 
+import jakarta.validation.Valid;
 import mk.ukim.finki.backend.model.Book;
 import mk.ukim.finki.backend.model.Dto.BookDto;
 import mk.ukim.finki.backend.service.BookService;
@@ -38,9 +39,8 @@ public class BookController {
             return ResponseEntity.notFound().build();
         return ResponseEntity.ok(book);
     }
-
     @PostMapping("/add")
-    public ResponseEntity<Book> addBook(@RequestBody BookDto bookDto){
+    public ResponseEntity<Book> addBook(@Valid @RequestBody BookDto bookDto){
         var book = bookService.addBook(bookDto);
 
         if (book == null)
@@ -53,7 +53,7 @@ public class BookController {
         var book = bookService.editBook(id, bookDto);
         if (book == null)
             return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(book);
+        return  ResponseEntity.ok(book);
     }
 
     @DeleteMapping("/delete/{id}")

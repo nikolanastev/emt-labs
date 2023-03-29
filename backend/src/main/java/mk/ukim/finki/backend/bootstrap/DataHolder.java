@@ -47,6 +47,8 @@ public class DataHolder {
             authorRepository.save(author4);
             var author5 = new Author("Lorem 2", "Ipsum 2", country5);
             authorRepository.save(author5);
+            var author6 = new Author("Lorem 3", "Ipsum 3", country5);
+            authorRepository.save(author6);
 
             var book1 = new Book("Pirej", Genre.HISTORY, author1,50);
             bookRepository.save(book1);

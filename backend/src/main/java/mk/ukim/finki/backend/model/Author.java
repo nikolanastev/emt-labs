@@ -3,6 +3,8 @@ package mk.ukim.finki.backend.model;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Objects;
 
@@ -20,6 +22,7 @@ public class Author {
     private String surname;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Country country;
 
     public Author(String name, String surname, Country country){

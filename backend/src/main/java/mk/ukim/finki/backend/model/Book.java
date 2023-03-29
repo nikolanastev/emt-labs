@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Min;
 import lombok.*;
 import mk.ukim.finki.backend.model.Enums.Genre;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.Objects;
 
@@ -24,6 +26,7 @@ public class Book {
     private Genre genre;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Author author;
 
     @Min(0)
