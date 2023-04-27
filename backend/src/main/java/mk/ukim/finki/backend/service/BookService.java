@@ -13,7 +13,7 @@ public interface BookService {
     Book addBook(BookDto bookDto);
     Book editBook(Long id, BookDto bookDto);
     Book deleteBook(Long id);
-    void markBookAsTaken(Long id);
+    Book markBookAsTaken(Long id);
     List<Book> getAllBooksByPage(Pageable withPage);
 
 }

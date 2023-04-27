@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/countries")
-@CrossOrigin("http://localhost:3000")
 public class CountryController {
 
     private final CountryService countryService;

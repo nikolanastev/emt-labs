@@ -57,14 +57,15 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void markBookAsTaken(Long id) {
+    public Book markBookAsTaken(Long id) {
         var book = bookRepository.findById(id).orElse(null);
 
         if (book == null)
-            return;
+             return null;
 
         book.setAvailableCopies(book.getAvailableCopies() - 1);
         bookRepository.save(book);
+        return book;
     }
 
     @Override
@@ -73,7 +74,7 @@ public class BookServiceImpl implements BookService {
     }
 
     private Book saveBook(BookDto bookDto, Book book){
-        var author = authorService.getAuthorById(bookDto.authorId());
+        var author = authorService.getAuthorById(bookDto.author());
 
         if (author == null)
             return null;

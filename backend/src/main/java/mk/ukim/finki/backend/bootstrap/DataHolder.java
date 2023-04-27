@@ -61,6 +61,42 @@ public class DataHolder {
             var book5 = new Book("Lorem Book 3", Genre.THRILLER, author5, 0);
             bookRepository.save(book5);
 
+
+
+            var country6 = new Country("Lorem", "Europe");
+            countryRepository.save(country6);
+            var country7 = new Country("Ipsiumium", "North America");
+            countryRepository.save(country7);
+            var country8 = new Country("Mina", "Asia");
+            countryRepository.save(country8);
+            var country9 = new Country("Chile", "South America");
+            countryRepository.save(country9);
+            var country10 = new Country("Tunis", "Africa");
+            countryRepository.save(country10);
+
+            var author12 = new Author("Loremiumius", "Ipsiumiumius", country10);
+            authorRepository.save(author12);
+            var author7 = new Author("Mearnest", "Wayheming", country7);
+            authorRepository.save(author7);
+            var author8 = new Author("Aling", "Zhang", country8);
+            authorRepository.save(author8);
+            var author9 = new Author("Lorem 9", "Ipsum 9", country9);
+            authorRepository.save(author9);
+            var author10 = new Author("Lorem 10", "Ipsum 10", country10);
+            authorRepository.save(author10);
+            var author11 = new Author("Lorem 11", "Ipsum 11",country10);
+            authorRepository.save(author11);
+
+            var book6 = new Book("Mirej", Genre.FANTASY, author6,15);
+            bookRepository.save(book6);
+            var book7 = new Book("For Bell the Whom Tolls", Genre.CLASSICS, author7, 10);
+            bookRepository.save(book7);
+            var book8 = new Book("Lorem Book 8", Genre.NOVEL, author8, 5);
+            bookRepository.save(book8);
+            var book9 = new Book("Lorem Book 9", Genre.DRAMA, author9, 4);
+            bookRepository.save(book9);
+            var book10 = new Book("Lorem Book 10", Genre.THRILLER, author10, 1);
+            bookRepository.save(book10);
         }
     }
 

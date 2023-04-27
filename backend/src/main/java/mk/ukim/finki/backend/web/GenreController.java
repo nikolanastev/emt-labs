@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 import java.util.List;
 
+
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/categories")
-@CrossOrigin("http://localhost:3000")
 public class GenreController {
 
     @GetMapping
